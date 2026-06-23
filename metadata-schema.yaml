@@ -12,28 +12,48 @@ contributors:
   - name: string
 
 citation:
-  doi: string
-  pmid: string
-  reference: string
+  doi: string     # DOI only, no link
+  pmid: string    # PubMed ID only, no link
+  url: string      # either journal link or preprint link or website link
+  reference: string  # regular citation string, e.g. "Author et al., Journal, Year, Volume, Pages"
 
 date:
   created: YYYY-MM-DD
   modified: YYYY-MM-DD
   published: YYYY-MM-DD
+  tested: YYYY-MM-DD    # model last tested, but no changes made
 
 tags: string[]
-category: enum(signaling, regulation, metabolism, gene-expression, epidemiology, immunology, tutorial, validation, showcase, synthetic-biology, ecology, physics, computer-science, other, compartments, energy, feature-demos, nfsim, processes, wacky, cs, biology, genetics, ml, signal-processing, mechanistic-modeling, biophysics)
+#category: enum(signaling, regulation, metabolism, gene-expression, epidemiology, immunology, tutorial, validation, showcase, synthetic-biology, ecology, physics, computer-science, other, compartments, energy, feature-demos, nfsim, processes, wacky, cs, biology, genetics, ml, signal-processing, mechanistic-modeling, biophysics)
+biol_category: 
+  - enum(signaling, regulation, metabolism, gene-expression, epidemiology, immunology, synthetic-biology, ecology, physics, other, biology, genetics, signal-processing, mechanistic-modeling, biophysics)
+
+comp_categories: 
+  - enum(tutorial, validation, showcase, computer-science, other, compartments, energy, feature-demos, nfsim, processes, wacky, cs, ml, other)
 
 compatibility:
   bng2_compatible: boolean
   min_bng_version: string
+  rr_compatible: boolean     
+  bnglviz_compatible: boolean
+  vcell_compatible: boolean
+  vcell_errors: string
   simulation_methods:
-    - enum(ode, ssa, nf, pla, hybrid)
-  uses_compartments: boolean
-  uses_energy: boolean
-  uses_functions: boolean
+    - enum(ode, ssa, nf, pla, hybrid, molclustpy, vcell)
   nfsim_compatible: boolean
   excluded: boolean
+
+features:
+  uses_cbngl_compartments: boolean
+  uses_vcell_compartments: boolean
+  uses_energy: boolean
+  uses_functions: boolean
+  uses_moveconnected: boolean
+  uses_trash_molecules: boolean
+  uses_anchors: boolean
+  uses_multiple_identical_sites: boolean
+  uses_deletes_molecules: boolean
+  uses_exclude_include_reactants: boolean  
 
 source:
   origin: enum(published, contributed, ai-generated, ported-from-sbml, tutorial, test-case)
