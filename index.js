@@ -926,12 +926,6 @@ function attachEventListeners() {
 
   document.getElementById("downloadCsv").addEventListener("click", downloadCsv);
 
-  document.getElementById("clearSearch").addEventListener("click", () => {
-    searchEl.value = "";
-    currentPage = 1;
-    renderTable();
-  });
-
   document.getElementById("showDefault").addEventListener("click", () => {
     visibleColumns = new Set(DEFAULT_VISIBLE_COLUMNS.filter(column => columns.includes(column)));
     currentPage = 1;
