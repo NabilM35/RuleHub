@@ -8,15 +8,11 @@ contributors:
 
 tags: ["published", "tutorials", "nfsim", "polymer", "a", "b", "c", "simulate_nf"]
 
-category: "signaling"
-
 date:
   last_tested: 2026-06-30
 
 category: "signaling"
-
 biol_categories: ["tutorial"]
-
 comp_categories: ["other"]
 
 compatibility:
